@@ -1,4 +1,35 @@
+//get random users name
+function generateRandomName() {
+  const usersArray = [
+    "Sarah Johnson",
+    "Michael Smith",
+    "Jennifer Brown",
+    "Christopher Lee",
+    "Amanda Davis",
+    "Matthew Wilson",
+    "Emily Martinez",
+    "Daniel Taylor",
+    "Jessica Anderson",
+    "David Thompson",
+    "Melissa Garcia",
+    "James Harris",
+    "Samantha Rodriguez",
+    "John Clark",
+    "Ashley White",
+    "Robert Thomas",
+    "Brittany Miller",
+    "Joshua Moore",
+    "Nicole Taylor",
+    "Andrew Jackson",
+  ];
 
+  //to create random number between 1 to 20
+  const randomNumber = Math.random() * 19;
+  const index = Math.floor(randomNumber) + 1;
+
+  const randomName = usersArray[index];
+  return randomName;
+}
 
 //to get users comment and to create dynamic element and append
 function dynamicComment() {
@@ -27,7 +58,8 @@ function dynamicComment() {
   );
 
   const userName = document.createElement("h4");
-  userName.innerText = 'Mahbubur Rahman';
+  const randomName = generateRandomName();
+  userName.innerText = randomName;
   userName.classList.add("font-bold");
   newChildDiv.appendChild(userName);
 
@@ -48,9 +80,8 @@ function handleComment(event) {
   const newDiv = dynamicComment();
   commentsContainer.appendChild(newDiv);
 
-
   //to clear after submit
   const userInputEl = document.getElementById("text-area");
-  userInputEl.value = '';
+  userInputEl.value = "";
 }
 document.getElementById("submit-btn").addEventListener("click", handleComment);
