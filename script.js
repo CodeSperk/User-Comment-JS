@@ -52,7 +52,8 @@ function dynamicComment() {
   newChildDiv.classList.add(
     "bg-slate-200",
     "px-4",
-    "py-4",
+    "py-1",
+    "pb-4",
     "rounded-md",
     "w-full"
   );
