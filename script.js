@@ -86,3 +86,18 @@ function handleComment(event) {
   userInputEl.value = "";
 }
 document.getElementById("submit-btn").addEventListener("click", handleComment);
+
+
+//get and display users value by pressing the enter button
+document.getElementById('text-area').addEventListener('keyup', function(event){
+  if(event.key === 'Enter'){
+    //display new comment
+  const commentsContainer = document.getElementById("comments-container");
+  const newDiv = dynamicComment();
+  commentsContainer.appendChild(newDiv);
+
+  //to clear after submit
+  const userInputEl = document.getElementById("text-area");
+  userInputEl.value = "";
+  }
+});
